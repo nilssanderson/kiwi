@@ -1,0 +1,34 @@
+title = "Category"
+url = "/blog/category/:slug"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+==
+<?php
+function onEnd(){
+    $this->page->url = '/blog';
+}
+?>
+==
+<div>
+	<div class="container">
+
+        <div class="page-header">
+            <h2>
+                Blog<br />
+                <small>Category Page</small>
+            </h2>
+        </div>
+
+        {% component 'blogPosts' %}
+
+	</div>
+</div>

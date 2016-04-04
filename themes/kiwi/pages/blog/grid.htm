@@ -1,0 +1,33 @@
+title = "Blog"
+url = "/blog/:page?"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+==
+<?php
+function onEnd(){
+    $this->page->url = '/blog';
+}
+?>
+==
+<div>
+	<div class="container">
+
+        <div class="page-header">
+            <h2>
+                Blog<br />
+                <small>Landing Page</small>
+            </h2>
+        </div>
+
+        {% component 'blogPosts' %}
+
+	</div>
+</div>

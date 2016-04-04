@@ -1,0 +1,33 @@
+title = "Blog Post"
+url = "/blog/post/:slug"
+layout = "default"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/category"
+==
+<?php
+function onEnd(){
+    $this->page->title = $this->post->title;
+    $this->page->url = '/blog';
+    $this->page->overwrite_meta_tags = true;
+    $this->page->overwrite_facebook_og = true;
+    $this->page->overwrite_twittercards = true;
+}
+?>
+==
+<div>
+	<div class="container">
+
+        <div class="page-header">
+            <h2>
+                Blog<br />
+                <small>Post Page</small>
+            </h2>
+        </div>
+
+        {% component 'blogPost' %}
+
+	</div>
+</div>
