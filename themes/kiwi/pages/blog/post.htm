@@ -6,6 +6,9 @@ is_hidden = 0
 [blogPost]
 slug = "{{ :slug }}"
 categoryPage = "blog/category"
+
+[archiveList]
+maxPosts = 20
 ==
 <?php
 function onEnd(){
@@ -27,7 +30,14 @@ function onEnd(){
             </h2>
         </div>
 
-        {% component 'blogPost' %}
+        <div class="col-md-8">
+            <h2>{{ post.title }}</h2>
+            {% component 'blogPost' %}
+        </div>
+
+        <div class="col-md-4">
+            {% component 'archiveList' %}
+        </div>
 
 	</div>
 </div>
