@@ -3,18 +3,58 @@ description = "Default layout"
 <!DOCTYPE html>
 <html>
     <head>
+
         <meta charset="utf-8">
-        <title>OctoberCMS - {{ this.page.title }}</title>
-        <meta name="description" content="{{ this.page.meta_description }}">
-        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {% if this.page.overwrite_meta_tags %}
+            {% placeholder meta_tags %}
+        {% else %}
+            <title>OctoberCMS - {{ this.page.title }}</title>
+            <meta name="title" content="{{ this.page.meta_title }}">
+            <meta name="description" content="{{ this.page.meta_description }}">
+            <link rel="canonical" href="{{ this.page.url }}">
+        {% endif %}
         <meta name="author" content="OctoberCMS">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="generator" content="OctoberCMS">
+
+        <!-- Pages can inject HTML here using put and endput -->
+        {% if this.page.overwrite_facebook_og %}
+            {% placeholder facebook_og %}
+        {% else %}
+            <meta property="og:title" content="OctoberCMS">
+            <meta property="og:site_name" content="OctoberCMS">
+            <meta property="og:type" content="website">
+            <meta property="og:url" content="">
+            <meta property="og:description" content="">
+            <meta property="og:image" content="/img/i/icon.png">
+        {% endif %}
+
+        {% if this.page.overwrite_twittercards %}
+            {% placeholder twittercards %}
+        {% else %}
+            <meta name="twitter:card" content="OctoberCMS" />
+            <meta name="twitter:title" content="OctoberCMS" />
+            <meta name="twitter:description" content="" />
+            <meta name="twitter:image" content="/img/i/icon.png" />
+        {% endif %}
+
+        {% placeholder head %}
+
         <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}" />
+        <link rel="shortcut icon" href="/img/i/icon.png">
+        <link rel="apple-touch-icon-precomposed" href="/img/i/icon.png">
+
         {% styles %}
+
         <link href="{{ [
             'assets/css/theme.css'
         ]|theme }}" rel="stylesheet">
+
+        <!-- Fontawesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     </head>
     <body>
 
