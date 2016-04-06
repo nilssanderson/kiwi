@@ -1,0 +1,14 @@
+{
+  "name": "kiwi",
+  "description": "OctoberCMS Boilerplate site with Blog.",
+  "scripts": {
+  },
+  "env": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
