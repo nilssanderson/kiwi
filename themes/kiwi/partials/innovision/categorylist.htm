@@ -1,0 +1,7 @@
+{% set categories = categoryList.categories %}
+<h4>Categories</h4>
+<div class="list-group col-sm-4">
+    {% for category in categories %}
+        <a class="button list-group-item" href="/innovision/category/{{ category.slug }}">{{ category.name }}</a>
+    {% endfor %}
+</div>

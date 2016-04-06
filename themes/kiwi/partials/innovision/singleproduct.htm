@@ -1,0 +1,44 @@
+{% set product = singleProduct.product %}
+<div itemscope itemtype="http://schema.org/Product">
+    <h4 itemprop="name">{{ product.name }}</h4>
+    <p class="lead">{{ product.description }}</p>
+    <img src="{{ product.featured_image.path }}"/>
+    <ul>
+        {% for image in product.images %}
+            <img src="{{ image.path }}"/>
+        {% endfor %}
+    </ul>
+
+    <h3>£{{ product.price }}</h3>
+
+    <form class="form-horizontal" data-request="onAddToBasket" data-request-update="'navigation': '#miniBasketContainer'">
+
+        <!-- Quantity -->
+        <div class="form-group col-sm-12">
+            <label class="control-label" for="quantity">Quantity</label>
+            <div class="row">
+                <div class="col-sm-2">
+                    <input class="form-control" type="number" value="1" name="quantity" id="quantity"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Multibox -->
+        <div class="form-group col-sm-12">
+            <label class="control-label" for="multi_box">Multibox Option</label>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="multi_box" id="multi_box"/>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <input type="hidden" value="{{ product.id }}" name="product_id"/>
+        <input class="btn btn-primary" type="submit" value="Add To Basket"/>
+    </form>
+</div>

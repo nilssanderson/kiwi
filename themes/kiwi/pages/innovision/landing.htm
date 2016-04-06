@@ -1,0 +1,28 @@
+title = "Innovision"
+url = "/innovision/:page?"
+layout = "default"
+is_hidden = 0
+
+[categoryList]
+==
+<?php
+function onEnd(){
+    $this->page->url = '/innovision';
+}
+?>
+==
+<div>
+	<div class="container">
+
+        <div class="page-header">
+            <h2>
+                Innovision<br />
+                <small>Landing/Categories Page</small>
+            </h2>
+        </div>
+
+        <!-- Overwrite -> `plugins/declanmcdonough/innovision/components/categorylist/default.htm` -->
+        {% partial 'innovision/categorylist.htm' %}
+
+	</div>
+</div>

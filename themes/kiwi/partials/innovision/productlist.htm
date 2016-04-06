@@ -1,0 +1,7 @@
+{% set products = productList.products %}
+<h4>Products in {{ category.name }}</h4>
+<div class="list-group col-sm-4">
+    {% for product in products %}
+        <a class="button list-group-item" href="/innovision/product/{{ product.slug }}">{{ product.name }}</a>
+    {% endfor %}
+</div>
