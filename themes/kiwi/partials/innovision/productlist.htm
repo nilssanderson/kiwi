@@ -1,4 +1,7 @@
+<!-- Needs to be alias of component, in this case `productList` -->
 {% set products = productList.products %}
+{% set category = productList.category %}
+
 <h4>Products in {{ category.name }}</h4>
 <div class="list-group col-sm-4">
     {% for product in products %}

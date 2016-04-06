@@ -1,4 +1,6 @@
+<!-- Needs to be alias of component, in this case `singleProduct` -->
 {% set product = singleProduct.product %}
+
 <div itemscope itemtype="http://schema.org/Product">
     <h4 itemprop="name">{{ product.name }}</h4>
     <p class="lead">{{ product.description }}</p>
