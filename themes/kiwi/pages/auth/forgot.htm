@@ -1,0 +1,40 @@
+title = "Forgot Password"
+url = "/forgot/:code?"
+layout = "default"
+is_hidden = 0
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[resetPassword]
+paramCode = "code"
+==
+<div>
+	<div class="container">
+
+        <div class="page-header">
+            <h2>
+                Innovision<br />
+                <small>Forgot Password Page</small>
+            </h2>
+        </div>
+
+		<div class="row">
+			<div class="col-md-4" id="partialUserResetForm">
+	            <h3>Reset Password</h3>
+	            {% if resetPassword.code == null %}
+	                {% partial 'auth/forgot_restore' %}
+	            {% else %}
+	                {% partial 'auth/forgot_reset' %}
+	            {% endif %}
+			</div>
+
+			<div class="col-md-8">
+				<h3>Not registered yet?</h3>
+				<p><a class="btn btn-primary" href="/register">Register</a></p>
+				<p>Account holders will receive news updates and special orders.</p>
+			</div>
+		</div>
+	</div>
+</div>

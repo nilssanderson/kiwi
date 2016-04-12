@@ -1,0 +1,29 @@
+title = "Jobs Category"
+url = "/jobs/department/:department_slug"
+layout = "default"
+is_hidden = 0
+
+[jobList]
+maxItems = 20
+==
+<?php
+function onEnd(){
+    $this->page->url = '/jobs';
+}
+?>
+==
+<div>
+	<div class="container">
+
+        <div class="page-header">
+            <h2>
+                Jobs<br />
+                <small>Jobs Page</small>
+            </h2>
+        </div>
+
+        <!-- Overwrite -> `plugins/nilssanderson/jobs/components/joblist/default.htm` -->
+        {% partial 'jobs/joblist.htm' %}
+
+	</div>
+</div>

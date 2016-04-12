@@ -1,0 +1,10 @@
+<!-- Needs to be alias of component, in this case `jobList` -->
+{% set jobs = jobList.jobs %}
+{% set department = jobList.department %}
+
+<h4>Jobs in {{ department.name }}</h4>
+<div class="list-group col-sm-4">
+    {% for job in jobs %}
+        <a class="button list-group-item" href="/jobs/job/{{ job.slug }}">{{ job.title }}</a>
+    {% endfor %}
+</div>

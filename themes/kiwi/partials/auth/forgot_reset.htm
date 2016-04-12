@@ -1,0 +1,21 @@
+<form
+    class="delivery row"
+    data-request="{{ resetPassword }}::onResetPassword"
+    data-request-update="'auth/forgot_complete': '#partialUserResetForm'">
+
+    <!-- Activation code -->
+    <div class="form-group col-md-10">
+        <label for="resetCode">Activation Code</label>
+        <input name="code" type="text" id="resetCode" placeholder="Activation Code">
+    </div>
+
+    <!-- New password -->
+    <div class="form-group col-md-10">
+        <label for="resetPassword">New Password</label>
+        <input name="password" type="password" id="resetPassword" placeholder="New Password">
+    </div>
+
+    <div class="form-group col-md-12">
+        <button type="submit" class="btn btn-primary">Reset</button>
+    </div>
+</form>

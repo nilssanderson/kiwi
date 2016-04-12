@@ -1,0 +1,15 @@
+<form
+    class="delivery row"
+    data-request="{{ resetPassword }}::onRestorePassword"
+    data-request-update="'auth/forgot_reset': '#partialUserResetForm'">
+
+    <!-- Email -->
+    <div class="form-group col-md-10">
+        <label for="userRestoreEmail">Email</label>
+        <input name="email" class="form-control" type="email" id="userRestoreEmail" placeholder="Email">
+    </div>
+
+    <div class="form-group col-md-12">
+        <button type="submit" class="btn btn-default">Restore password</button>
+    </div>
+</form>

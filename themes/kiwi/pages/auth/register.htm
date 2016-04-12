@@ -1,0 +1,35 @@
+title = "Register"
+url = "/register"
+layout = "default"
+is_hidden = 0
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[account]
+paramCode = "code"
+==
+<div>
+	<div class="container">
+
+        <div class="page-header">
+            <h2>
+                Innovision<br />
+                <small>Login Page</small>
+            </h2>
+        </div>
+
+		<div class="row">
+			<div class="col-md-4">
+				{% partial 'auth/register_form' %}
+			</div>
+
+			<div class="col-md-8">
+				<h3>Already registered?</h3>
+				<p><a class="btn btn-primary" href="/login">Login</a></p>
+				<p><a href="/forgot">I've forgotten my password!</a></p>
+			</div>
+		</div>
+	</div>
+</div>

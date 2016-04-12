@@ -14,7 +14,18 @@
             <div class="collapse navbar-collapse navbar-main-collapse">
                 <ul class="nav navbar-nav">
                     <li class="{% if this.page.id == 'blog' %}active{% endif %}"><a href="{{ 'home'|page }}/blog">Blog</a></li>
+                    <li class="{% if this.page.id == 'jobs' %}active{% endif %}"><a href="{{ 'home'|page }}/jobs">Jobs</a></li>
                     <li class="{% if this.page.id == 'innovision' %}active{% endif %}"><a href="{{ 'home'|page }}/innovision">Innovision</a></li>
+                    <li class="nav-basket">
+                        {% partial 'innovision/minibasket.htm' %}
+                    </li>
+                    <li class="nav-user">
+                        {% if user %}
+				            <a class="email" href="/profile">{{ str_limit(user.name, 1, '') }}{{ str_limit(user.surname, 1, '') }}</a>
+			            {% else %}
+				            <a class="login" href="/login">Log In / Register<i class="fa fa-sign-in"></i></a>
+			            {% endif %}
+                    </li>
                 </ul>
             </div>
         </div>

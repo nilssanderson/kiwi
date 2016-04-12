@@ -1,0 +1,29 @@
+title = "Job Product"
+url = "/jobs/job/:job_slug"
+layout = "default"
+is_hidden = 0
+
+[singleJob]
+slug = "{{ :job_slug }}"
+==
+<?php
+function onEnd(){
+    $this->page->url = '/jobs';
+}
+?>
+==
+<div>
+	<div class="container">
+
+        <div class="page-header">
+            <h2>
+                Job<br />
+                <small>Product Page</small>
+            </h2>
+        </div>
+
+        <!-- Overwrite -> `plugins/nilssanderson/jobs/components/singlejob/default.htm` -->
+        {% partial 'jobs/singlejob.htm' %}
+
+	</div>
+</div>

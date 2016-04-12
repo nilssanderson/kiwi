@@ -1,0 +1,7 @@
+<!-- Needs to be alias of component, in this case `singleJob` -->
+{% set job = singleJob.job %}
+
+<h2>{{ job.title }}</h2>
+<div class="lead">
+    {{ job.description|raw }}
+</div>

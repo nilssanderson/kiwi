@@ -7268,3 +7268,12 @@ header#layout-header .navbar-brand {
 .callout-success h4 {
   color: #3c763d;
 }
+
+/* */
+
+.nav-basket i {
+    margin-right: .5rem;
+}
+.nav-user i {
+    margin-left: .5rem;
+}
