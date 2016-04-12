@@ -15,25 +15,37 @@ is_hidden = 0
 
         {% if basket.cartItems.count > 0 %}
             <div class="product-list">
-                <div class="row head">
+                <div class="row head hidden-xs hidden-sm">
                     <div class="list-option col-md-4"><b>Product Title</b></div>
                     <div class="list-option col-md-4"><b>Item Price</b></div>
                     <div class="list-option col-md-4"><b>Quantity</b></div>
                 </div>
 
+				<!-- Spacer -->
+				<div class="col-md-12">&nbsp;</div>
+
                 <div class="row">
                     {% for item in basket.cartItems %}
 
                         <div class="list-row">
+
+							<!-- Product name -->
+			                <div class="list-option col-md-4 hidden-md hidden-lg"><b>Product Title</b></div>
                             <div class="list-option col-md-4">
                                 <p>{{ item.name }}</p>
                                 {% if item.options.multibox %}
                                     <small>(Multibox)</small>
                                 {% endif %}
                             </div>
+
+							<!-- Product price -->
+							<div class="list-option col-md-4 hidden-md hidden-lg"><b>Item Price</b></div>
                             <div class="list-option col-md-4">
                                 <p>{{ item.price }}</p>
                             </div>
+
+							<!-- Product quantity -->
+							<div class="list-option col-md-4 hidden-md hidden-lg"><b>Quantity</b></div>
                             <div class="list-option col-md-4">
                                 <p>{{ item.qty }}</p>
                             </div>
@@ -44,7 +56,10 @@ is_hidden = 0
                 </div>
             </div>
 
-            <a href="/checkout">Proceed to checkout</a>
+			<!-- Spacer -->
+			<div class="col-md-12">&nbsp;</div>
+
+            <a href="/checkout" class="btn btn-primary">Proceed to checkout</a>
 
         {% else %}
 
