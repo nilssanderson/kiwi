@@ -13,12 +13,13 @@ is_hidden = 0
             </h2>
         </div>
 
-        {% if basket.cartItems.count > 0 %}
+		{% if basket.cartItems.count > 0 %}
             <div class="product-list">
                 <div class="row head hidden-xs hidden-sm">
-                    <div class="list-option col-md-4"><b>Product Title</b></div>
-                    <div class="list-option col-md-4"><b>Item Price</b></div>
-                    <div class="list-option col-md-4"><b>Quantity</b></div>
+                    <div class="list-option col-md-3"><b>Product Title</b></div>
+                    <div class="list-option col-md-3"><b>Item Price</b></div>
+                    <div class="list-option col-md-3"><b>Quantity</b></div>
+                    <div class="list-option col-md-3"><b>Subtotal</b></div>
                 </div>
 
 				<!-- Spacer -->
@@ -30,24 +31,32 @@ is_hidden = 0
                         <div class="list-row">
 
 							<!-- Product name -->
-			                <div class="list-option col-md-4 hidden-md hidden-lg"><b>Product Title</b></div>
-                            <div class="list-option col-md-4">
-                                <p>{{ item.name }}</p>
+			                <div class="list-option col-md-3 hidden-md hidden-lg"><b>Product Title</b></div>
+                            <div class="list-option col-md-3">
                                 {% if item.options.multibox %}
-                                    <small>(Multibox)</small>
-                                {% endif %}
+									<p>{{ item.name }}<br /><small>Multibox</small></p>
+								{% else %}
+									<p>{{ item.name }}</p>
+								{% endif %}
                             </div>
 
 							<!-- Product price -->
-							<div class="list-option col-md-4 hidden-md hidden-lg"><b>Item Price</b></div>
-                            <div class="list-option col-md-4">
-                                <p>{{ item.price }}</p>
+							<div class="list-option col-md-3 hidden-md hidden-lg"><b>Item Price</b></div>
+                            <div class="list-option col-md-3">
+                                <p>{{ item.price }}<br /><small>&nbsp;</small></p>
                             </div>
 
 							<!-- Product quantity -->
-							<div class="list-option col-md-4 hidden-md hidden-lg"><b>Quantity</b></div>
-                            <div class="list-option col-md-4">
-                                <p>{{ item.qty }}</p>
+							<div class="list-option col-md-3 hidden-md hidden-lg"><b>Quantity</b></div>
+                            <div class="list-option col-md-3">
+                                <p>{{ item.qty }}<br /><small>&nbsp;</small></p>
+                            </div>
+
+							<!-- Product subtotal -->
+							<div class="list-option col-md-3 hidden-md hidden-lg"><b>Subtotal</b></div>
+                            <div class="list-option col-md-3">
+                                <!-- <p>{{ item.product.multiboxPrice }}</p> -->
+								<p>&nbsp;<br /><small>&nbsp;</small></p>
                             </div>
                         </div>
 

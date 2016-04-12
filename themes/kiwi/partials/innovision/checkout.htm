@@ -3,7 +3,7 @@
 {% set states = checkout.states %}
 
 <!-- Order form -->
-<form id="orderForm" class="row"
+<form id="orderForm"
       data-request="checkout::onSubmitOrder"
       data-request-update="'innovision/emptybasket': '.nav-basket'"
       data-request-success="$('#orderForm').html('<h3><b>Thank you for your Order. We will be in touch shortly</b></h3>');">
@@ -20,90 +20,93 @@
     <!--'state_id'              => $state_id,-->
     <!--'contact_number'        => $contact_number,-->
 
-    <!-- First name -->
-    <div class="form-group col-md-6">
-        <label for="first_name">First Name</label>
-        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name">
-    </div>
+    <div class="row">
 
-    <!-- Last name -->
-    <div class="form-group col-md-6">
-        <label for="last_name">Last Name</label>
-        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name">
-    </div>
+        <!-- First name -->
+        <div class="form-group col-md-6">
+            <label for="first_name">First Name</label>
+            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name">
+        </div>
 
-    <!-- Email -->
-    <div class="form-group col-md-6">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-    </div>
+        <!-- Last name -->
+        <div class="form-group col-md-6">
+            <label for="last_name">Last Name</label>
+            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name">
+        </div>
 
-    <!-- Confirm email -->
-    <div class="form-group col-md-6">
-        <label for="email_confirmation">Confirm Email</label>
-        <input type="email" class="form-control" name="email_confirmation" id="email_confirmation" placeholder="Confirm Email">
-    </div>
+        <!-- Email -->
+        <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+        </div>
 
-    <!-- Spacer -->
-    <div class="form-group col-md-12"></div>
+        <!-- Confirm email -->
+        <div class="form-group col-md-6">
+            <label for="email_confirmation">Confirm Email</label>
+            <input type="email" class="form-control" name="email_confirmation" id="email_confirmation" placeholder="Confirm Email">
+        </div>
 
-    <!-- Address Line 1 -->
-    <div class="form-group col-md-6">
-        <label for="address_line_1">Address Line 1</label>
-        <input type="text" class="form-control" name="address_line_1" id="address_line_1" placeholder="Address Line 1">
-    </div>
+        <!-- Spacer -->
+        <div class="form-group col-md-12"></div>
 
-    <!-- Address Line 2 -->
-    <div class="form-group col-md-6">
-        <label for="address_line_2">Address Line 2</label>
-        <input type="text" class="form-control" name="address_line_2" id="address_line_2" placeholder="Address Line 2">
-    </div>
+        <!-- Address Line 1 -->
+        <div class="form-group col-md-6">
+            <label for="address_line_1">Address Line 1</label>
+            <input type="text" class="form-control" name="address_line_1" id="address_line_1" placeholder="Address Line 1">
+        </div>
 
-    <!-- Town/City -->
-    <div class="form-group col-md-6">
-        <label for="town_city">Town/City</label>
-        <input type="text" class="form-control" name="town_city" id="town_city" placeholder="Town/City">
-    </div>
+        <!-- Address Line 2 -->
+        <div class="form-group col-md-6">
+            <label for="address_line_2">Address Line 2</label>
+            <input type="text" class="form-control" name="address_line_2" id="address_line_2" placeholder="Address Line 2">
+        </div>
 
-    <!-- Postal Code -->
-    <div class="form-group col-md-6">
-        <label for="post_zipcode">Postal Code</label>
-        <input type="text" class="form-control" name="post_zipcode" id="post_zipcode" placeholder="Postal Code">
-    </div>
+        <!-- Town/City -->
+        <div class="form-group col-md-6">
+            <label for="town_city">Town/City</label>
+            <input type="text" class="form-control" name="town_city" id="town_city" placeholder="Town/City">
+        </div>
 
-    <!-- Country -->
-    <div class="form-group col-md-6">
-        <label for="post_zipcode">Country</label>
-        <select class="form-control" id="country_id" name="country_id">
-            {% for key,value in countries %}
-                <option value="{{ key }}">{{ value }}</option>
-            {% endfor %}
-        </select>
-    </div>
+        <!-- Postal Code -->
+        <div class="form-group col-md-6">
+            <label for="post_zipcode">Postal Code</label>
+            <input type="text" class="form-control" name="post_zipcode" id="post_zipcode" placeholder="Postal Code">
+        </div>
 
-    <!-- State/County -->
-    <div class="form-group col-md-6">
-        <label for="state_id">State/County</label>
-        <select class="form-control" id="state_id" name="state_id">
-            {% for key,value in states %}
-                <option value="{{ key }}">{{ value }}</option>
-            {% endfor %}
-        </select>
-    </div>
+        <!-- Country -->
+        <div class="form-group col-md-6">
+            <label for="post_zipcode">Country</label>
+            <select class="form-control" id="country_id" name="country_id">
+                {% for key,value in countries %}
+                    <option value="{{ key }}">{{ value }}</option>
+                {% endfor %}
+            </select>
+        </div>
 
-    <!-- Spacer -->
-    <div class="form-group col-md-12"></div>
+        <!-- State/County -->
+        <div class="form-group col-md-6">
+            <label for="state_id">State/County</label>
+            <select class="form-control" id="state_id" name="state_id">
+                {% for key,value in states %}
+                    <option value="{{ key }}">{{ value }}</option>
+                {% endfor %}
+            </select>
+        </div>
 
-    <!-- Contact Number -->
-    <div class="form-group col-md-6">
-        <label for="contact_number">Contact Number</label>
-        <input type="tel" class="form-control" name="contact_number" id="contact_number" placeholder="Contact Number">
-    </div>
+        <!-- Spacer -->
+        <div class="form-group col-md-12"></div>
 
-    <!-- Spacer -->
-    <div class="form-group col-md-12"></div>
+        <!-- Contact Number -->
+        <div class="form-group col-md-6">
+            <label for="contact_number">Contact Number</label>
+            <input type="tel" class="form-control" name="contact_number" id="contact_number" placeholder="Contact Number">
+        </div>
 
-    <div class="form-group col-md-12">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <!-- Spacer -->
+        <div class="form-group col-md-12"></div>
+
+        <div class="form-group col-md-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
     </div>
 </form>
